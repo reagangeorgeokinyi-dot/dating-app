@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LoveConnect Kenya</title>
+<style>
+body{font-family:Arial;background:#fff0f5;margin:0;padding:0}
+header{background:#ff3366;color:white;padding:15px;text-align:center}
+.card{max-width:350px;margin:20px auto;background:white;border-radius:15px;box-shadow:0 4px 12px rgba(0,0,0,0.2);overflow:hidden;text-align:center;padding-bottom:15px}
+.card img{width:100%;height:350px;object-fit:cover}
+button{padding:10px 20px;border:none;border-radius:20px;margin:5px;font-weight:bold;cursor:pointer}
+.like{background:#ff3366;color:white}
+.pass{background:#eee}
+.chat{background:#25D366;color:white;width:80%}
+.ad{max-width:350px;margin:10px auto;background:#fff3cd;border:1px dashed #ffaa00;padding:10px;text-align:center;font-size:12px}
+.premium{max-width:350px;margin:20px auto;background:black;color:white;padding:15px;border-radius:10px;text-align:center}
+</style>
+</head>
+<body>
+<header>
+<h2>❤️ LoveConnect KE</h2>
+<p>Find love near you - 18+ Only</p>
+</header>
+
+<div class="ad">AD SPACE - Google AdMob Banner Will Show Here<br>ID: ca-app-pub-XXXX</div>
+
+<div class="card" id="profileCard">
+<img id="pImg" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1">
+<h3 id="pName">Achieng, 23 - Eldoret</h3>
+<p id="pBio">Loves music and business. Looking for serious.</p>
+<button class="pass" onclick="nextProfile()">❌ Pass</button>
+<button class="like" onclick="nextProfile()">❤️ Like</button>
+<br><br>
+<button class="chat" onclick="chat()">💬 Chat on WhatsApp</button>
+</div>
+
+<div class="premium">
+<h3>🔥 Go Premium</h3>
+<p>See who liked you + Unlimited chat</p>
+<p><b>199 KES / month</b></p>
+<button class="like" onclick="alert('To add M-Pesa: Connect Paystack. Till: 123456')">Pay with M-Pesa</button>
+</div>
+
+<div class="ad">AD SPACE - Interstitial Ad<br>Shows after 3 swipes</div>
+
+<script>
+const profiles = [
+{name:"Achieng, 23 - Eldoret", bio:"Loves music and business. Looking for serious.", img:"https://images.unsplash.com/photo-1524504388940-b1c1722653e1"},
+{name:"Faith, 22 - Kakuma", bio:"Student, kind and honest.", img:"https://images.unsplash.com/photo-1531123897727-8f129e1688ce"},
+{name:"Brian, 26 - Lodwar", bio:"Entrepreneur. Let's talk.", img:"https://images.unsplash.com/photo-1500648767791-00dcc994a43e"}
+];
+let i=0;
+function nextProfile(){
+i++; if(i>=profiles.length) i=0;
+document.getElementById('pName').innerText=profiles[i].name;
+document.getElementById('pBio').innerText=profiles[i].bio;
+document.getElementById('pImg').src=profiles[i].img;
+// Here you show AdMob Interstitial
+}
+function chat(){
+let num="254700000000"; // change to real number
+window.open("https://wa.me/"+num+"?text=Hi! I saw you on LoveConnect","_blank");
+}
+</script>
+</body>
+</html>
